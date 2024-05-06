@@ -1,0 +1,19 @@
+# name should be the same as the yml file
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+# Event that triggers these actions (jobs)
+on: [push]
+# Github Actions go within jobs:
+jobs: 
+ # action name
+  check-bats-version:
+  # Platform needed to execute
+    runs-on: ubuntu-latest
+    # steps to take/ algorithm/ actual action.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install -g bats
+      - run: bats -v
