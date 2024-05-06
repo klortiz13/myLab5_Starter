@@ -11,5 +11,5 @@ test('adds 1 + 2 to equal 3', () => {
 
 // Test the sum.js file (first import above)
 test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1,2)).toBe(4);
+  expect(sum(1,2)).toBe(3);
 });
