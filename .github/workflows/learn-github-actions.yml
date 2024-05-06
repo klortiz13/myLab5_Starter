@@ -9,11 +9,13 @@ jobs:
   check-bats-version:
   # Platform needed to execute
     runs-on: ubuntu-latest
-    # steps to take/ algorithm/ actual action.
+    # steps to take/ algorithm
     steps:
+    # actual actions use "uses:"
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          # terminal commands/scripts use "run:"
       - run: npm install -g bats
       - run: bats -v
